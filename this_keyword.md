@@ -1,0 +1,2 @@
+this ia runtime binding. It is a contextual based on the condition of the function invocation, this binding has nothing to do with where a function is declared but has instead everything to do with the same manner in which the function is called.
+When a function is called a execution context is created. This records contains information about where the function was called from the call stack, how the function was invoked, what parameters were passed

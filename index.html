@@ -7,17 +7,29 @@
   </head>
   <body>
     <script>
-      var a = 10;
+      let hooks = [];
+let currentHook = 0;
 
-      let b = 20;
+function useState(initialValue) {
+    if (hooks[currentHook] === undefined) {
+        hooks[currentHook] = initialValue;
+    }
 
-      const c = 30;
+    const hookIndex = currentHook;
 
-      console.log(window.a); // 10
+    function setState(newValue) {
+        hooks[hookIndex] = newValue;
+    }
 
-      console.log(window.b); // undefined
+    const value = hooks[currentHook];
 
-      console.log(window.c); // undefined
+    currentHook++;
+
+    return [value, setState];
+}
+
+console.log(useState(5))
+console.log(useState(50))
     </script>
   </body>
 </html>

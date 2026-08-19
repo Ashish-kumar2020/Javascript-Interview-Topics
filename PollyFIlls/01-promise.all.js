@@ -32,9 +32,9 @@ const promiseAllPollyfill = (taskList) => {
     });
 };
 
+
 promiseAllPollyfill([
-    Promise.resolve(1),
-    2,
-//    Promise.reject("Something went wrong"),
-    true
-]).then((val) => console.log(val));
+    new Promise(resolve => setTimeout(() => resolve("A"),500)),
+     new Promise(resolve => setTimeout(() => resolve("B"),600)),
+      new Promise(resolve => setTimeout(() => resolve("C"),100))
+]).then(console.log);

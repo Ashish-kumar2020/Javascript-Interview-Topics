@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .red {
+      color: rgb(255, 0, 0);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .large {
+      font-size: 20px;
+    }
+
+    #blue {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="red">Red text</p>
+  <p class="red">Another red text</p>
+
+  <p id="blue">Blue text</p>
+
+  <div class="hidden">Hidden div</div>
+
+  <span class="large">Large text</span>
+
+  <script>
+   
+function getElementsByStyle(property, value) {
+    const elements = document.querySelectorAll("*");
+    const result = [];
+    elements.forEach((val,index) => {
+      const styles = window.getComputedStyle(val);
+      const comparedStyle =styles.getPropertyValue(property)
+        if(comparedStyle === value){
+          result.push(val);
+        }
+    });
+    return result;
+}
+
+    console.log(getElementsByStyle("color", "rgb(255, 0, 0)"));
+    console.log(getElementsByStyle("display", "none"));
+    console.log(getElementsByStyle("font-size", "20px"));
+  </script>
+
+</body>
+</html>

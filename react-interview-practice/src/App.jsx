@@ -1,6 +1,7 @@
 // import { lazy, Suspense } from "react";
 // import { useState } from "react";
 import "./App.css";
+import Body from "./component/StateColocation/Body";
 // const DashBoard = lazy(() => import("./component/DashBoard"));
 
 // import DashBoard from "./component/DashBoard";
@@ -34,11 +35,12 @@ function App() {
       <Suspense fallback={<p>Load Dashboard....</p>}>
         {showDashBoard && <DashBoard />}
       </Suspense> */}
-      <div>
+      {/* <div>
         {items.map((item) => {
          return <div key={item.id}>{item.name}</div>;
         })}
-      </div>
+      </div> */}
+    <Body/>
     </>
   );
 }

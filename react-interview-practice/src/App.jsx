@@ -1,6 +1,7 @@
 // import { lazy, Suspense } from "react";
 // import { useState } from "react";
 import "./App.css";
+import Recipes from "./component/AbortController/Recipes";
 import Body from "./component/StateColocation/Body";
 // const DashBoard = lazy(() => import("./component/DashBoard"));
 
@@ -16,10 +17,10 @@ import Body from "./component/StateColocation/Body";
 function App() {
   // const [showDashBoard, setShowDashBoard] = useState(false);
   // console.log(add,substract);
-  const items = Array.from({ length: 10000 }, (_, index) => ({
-    id: index,
-    name: `Product ${index}`,
-  }));
+  // const items = Array.from({ length: 10000 }, (_, index) => ({
+  //   id: index,
+  //   name: `Product ${index}`,
+  // }));
   return (
     <>
       <h1>React Interview Topics Practise</h1>
@@ -40,7 +41,8 @@ function App() {
          return <div key={item.id}>{item.name}</div>;
         })}
       </div> */}
-    <Body/>
+    {/* <Body/> */}
+    <Recipes/>
     </>
   );
 }
